@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ <ion-card>
+
+    <ion-card-header>
+      Add new Catch
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Anglers Name</ion-label>
+        <ion-input type="text" [(ngModel)]="currentCatch.angler_name" name="anglers name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date / Time</ion-label>
+        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="currentCatch.datetime" name="date / time"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fishing Method</ion-label>
+        <ion-input type="text" [(ngModel)]="currentCatch.fishing_method" name="fishing method"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Breed</ion-label>
+        <ion-input type="text" [(ngModel)]="currentCatch.breed" name="breed"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Length</ion-label>
+        <ion-input type="text" [(ngModel)]="currentCatch.length" name="length"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Weight</ion-label>
+        <ion-input type="text" [(ngModel)]="currentCatch.weight" name="weight"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Weather</ion-label>
+        <ion-input type="text" [(ngModel)]="currentCatch.weather" name="weather" disabled="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Location</ion-label>
+        <ion-input type="text" [(ngModel)]="currentCatch.location" name="location" disabled="true"></ion-input>
+      </ion-item>
+      <button ion-button (click)="addCatch()">Button</button>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-list>
+    <div *ngFor="let catch of catches">
+      <ion-item class="item-stable" (click)="toggleGroup(catch)" [ngClass]="{active: isGroupShown(catch)}">
+              <ion-icon name="add" [hidden]="isGroupShown(catch)"></ion-icon>
+              <ion-icon name="remove" [hidden]="!isGroupShown(catch)"></ion-icon>
+            &nbsp;
+           
+                {{catch.angler_name}}
+          </ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[0] == true">Date: {{catch.datetime}}</ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[1] == true">Method: {{catch.fishing_method}}</ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[2] == true">Breed: {{catch.breed}}</ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[3] == true">Length: {{catch.length}}</ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[4] == true">Weight: {{catch.weight}}</ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[5] == true">Weather: {{catch.weather}}</ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[6] == true">Location: {{catch.location}}</ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[7] == true">Latitude: {{catch.latitude}}</ion-item>
+          <ion-item class="item-accordion" [hidden]="!isGroupShown(catch)" *ngIf="list[8] == true">Longitude: {{catch.longitude}}</ion-item>
+    </div>
+  </ion-list>
+
+</ion-content>

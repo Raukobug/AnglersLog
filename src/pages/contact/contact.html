@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+
+  <ion-item>
+    <ion-label>Date / Time</ion-label>
+    <ion-toggle [(ngModel)]="list[0]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fishing method</ion-label>
+    <ion-toggle [(ngModel)]="list[1]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Breed</ion-label>
+    <ion-toggle [(ngModel)]="list[2]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Length</ion-label>
+    <ion-toggle [(ngModel)]="list[3]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Weight</ion-label>
+    <ion-toggle [(ngModel)]="list[4]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+    <ion-item>
+    <ion-label>Weather</ion-label>
+    <ion-toggle [(ngModel)]="list[5]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+    <ion-item>
+    <ion-label>Location</ion-label>
+    <ion-toggle [(ngModel)]="list[6]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Latitude</ion-label>
+    <ion-toggle [(ngModel)]="list[7]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+    <ion-item>
+    <ion-label>Longitude</ion-label>
+    <ion-toggle [(ngModel)]="list[8]" (ionChange)="notify()"></ion-toggle>
+  </ion-item>
+
+</ion-list>
+</ion-content>

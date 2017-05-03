@@ -1,0 +1,20 @@
+{
+  "name": "AnglersLog",
+  "app_id": "",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://api.evang.dk/v1"
+    },
+    {
+      "path": "/weather-api",
+      "proxyUrl": "http://api.openweathermap.org/data/2.5"
+    },
+	{
+      "path": "/localapi",
+      "proxyUrl": "http://localhost:8000/api"
+    }
+  ]
+}
